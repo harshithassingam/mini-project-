@@ -259,3 +259,39 @@ ax.legend(title='Claim Status', labels=['Approved', 'Rejected'], loc = "upper ri
 plt.title("Approved vs Rejected Claims by Fraud Flag")
 plt.xlabel("Fraud Flag")
 plt.ylabel("Number of Claims")
+
+
+#Fradulent cases
+
+
+#Fraudulent cases by fuel type
+plt.figure(figsize=(8, 5))
+sns.barplot(data=fraud_counts, x='fuel_type', y='fraud_count', palette='Set2')
+
+plt.title('Number of Fraud Cases by fuel type ')
+plt.xlabel('fuel type')
+plt.ylabel('Fraud Case Count')
+plt.tight_layout()
+plt.show()
+
+#Fraudulent cases by region code
+plt.figure(figsize=(8, 5))
+sns.barplot(data=fraud_counts, x='region_code', y='fraud_count', palette='Set2')
+
+plt.title('Number of Fraud Cases by region code')
+plt.xlabel('region code')
+plt.ylabel('Fraud Case Count')
+plt.tight_layout()
+plt.show()
+
+
+
+#Fraudulent cases by customer age
+plt.figure(figsize=(8, 5))
+sns.barplot(data=fraud_counts, x='customer_age', y='fraud_count', palette='Set2')
+
+plt.title('Number of Fraud Cases by customer_age ')
+plt.xlabel('customer_age')
+plt.ylabel('Fraud Case Count')
+plt.tight_layout()
+plt.show()
