@@ -116,8 +116,8 @@ claim_counts = claims['claim_status'].value_counts().reset_index()
 
 claim_counts.columns = ['claim_status', 'count']
 
-
-plt.figure(figsize=(10,9)) # givesthe size of the bar graph
+#Overall claim
+plt.figure(figsize=(10,9)) # gives the size of the bar graph
 
 # we are creating a barplot using a seaborn function called as bar plot and we are giving the values for x axis and y axis
 sns.barplot(data=claim_counts, x='claim_status', y='count', palette=['skyblue', 'orange'])
@@ -128,8 +128,134 @@ plt.ylabel("Count")
 plt.show()
 
 
+#Gives the approval vs rejected rate for subscription length
+plt.figure(figsize=(12,5))
+ax = sns.countplot(data=claims, x="subscription_length_group", hue="claim_status", palette = 'pastel')
+
+
+# Rename legend labels from 0/1 to Approved/Rejected
+ax.legend(title='Claim Status', labels=['Approved', 'Rejected'], loc = "upper right")
+
+
+
+
+# Add title
+plt.title("Approved vs Rejected Claims by Subscription Length")
+plt.xlabel("Subscription Length")
+plt.ylabel("Number of Claims")
+
+# Show plot
+plt.show()
+
+
+#Gives the approval vs rejected rate for vehicle length
+plt.figure(figsize=(12,5))
+ax = sns.countplot(data=claims, x="vehicle_age", hue="claim_status", palette = 'pastel')
+
+
+# Rename legend labels from 0/1 to Approved/Rejected
+ax.legend(title='Claim Status', labels=['Approved', 'Rejected'], loc = "upper right")
+
+
+
+# Add title
+plt.title("Approved vs Rejected Claims by Vehicle Age")
+plt.xlabel("Vehicle Age (in months)")
+plt.ylabel("Number of Claims")
+
+# Show plot
+plt.show()
+
+
+#Gives the approval vs rejected rate for customer age
+
+plt.figure(figsize=(12,5))
+ax = sns.countplot(data=claims, x="customer_age", hue="claim_status", palette = 'pastel')
+
+
+# Rename legend labels from 0/1 to Approved/Rejected
+ax.legend(title='Claim Status', labels=['Approved', 'Rejected'], loc = "upper right")
+
+
+
+
+# Add title
+plt.title("Approved vs Rejected Claims by Customer Age")
+plt.xlabel("Age")
+plt.ylabel("Number of Claims")
+
+# Show plot
+plt.show()
 # In[ ]:
 
+#Gives the approval vs rejected rate for region code
+
+plt.figure(figsize=(12,5))
+ax = sns.countplot(data=claims, x="region_code", hue="claim_status", palette = 'pastel')
+
+
+# Rename legend labels from 0/1 to Approved/Rejected
+ax.legend(title='Claim Status', labels=['Approved', 'Rejected'], loc = "upper right")
 
 
 
+# Add title
+plt.title("Approved vs Rejected Claims by Region Code")
+plt.xlabel("Region Code")
+plt.ylabel("Number of Claims")
+
+# Show plot
+plt.show()
+
+#Gives the approval vs rejected rate for model
+
+plt.figure(figsize=(12,5))
+ax = sns.countplot(data=claims, x="model", hue="claim_status", palette = 'pastel')
+
+
+# Rename legend labels from 0/1 to Approved/Rejected
+ax.legend(title='Claim Status', labels=['Approved', 'Rejected'], loc = "upper right")
+
+
+
+# Add title
+plt.title("Approved vs Rejected Claims by Model")
+plt.xlabel("Model")
+plt.ylabel("Number of Claims")
+
+# Show plot
+plt.show()
+
+
+#Gives the approval vs rejected rate for fuel type
+plt.figure(figsize=(12,5))
+ax = sns.countplot(data=claims, x="fuel_type", hue="claim_status", palette = 'pastel')
+
+
+# Rename legend labels from 0/1 to Approved/Rejected
+ax.legend(title='Claim Status', labels=['Approved', 'Rejected'], loc = "upper right")
+
+
+
+# Add title
+plt.title("Approved vs Rejected Claims by Fuel Type")
+plt.xlabel("Fuel")
+plt.ylabel("Number of Claims")
+
+# Show plot
+plt.show()
+
+#Gives the approval vs rejected rate for fraud flag
+plt.figure(figsize=(12,5))
+ax = sns.countplot(data=claims, x="fraud_flag", hue="claim_status", palette = 'pastel')
+
+
+# Rename legend labels from 0/1 to Approved/Rejected
+ax.legend(title='Claim Status', labels=['Approved', 'Rejected'], loc = "upper right")
+
+
+
+# Add title
+plt.title("Approved vs Rejected Claims by Fraud Flag")
+plt.xlabel("Fraud Flag")
+plt.ylabel("Number of Claims")
