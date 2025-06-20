@@ -295,3 +295,15 @@ plt.xlabel('customer_age')
 plt.ylabel('Fraud Case Count')
 plt.tight_layout()
 plt.show()
+
+
+#Fradulent cases by ncap_rating 
+plt.figure(figsize=(8, 5))
+sns.barplot(data=fraud_counts, x='customer_age', y='fraud_count', palette='Set2')
+
+plt.title('Number of Fraud Cases by customer_age ')
+plt.xlabel('customer_age')
+plt.ylabel('Fraud Case Count')
+plt.tight_layout()
+plt.show()
+
